@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="js/webstorage.js"></script>
+		<script type="text/javascript">
+			//创建一个数据库。第一个参数表示这个数据库的名字，第二个参数表示数据库的版本号，第三个参数是数据库的描述，第四个表示分配大小（这里是分配10兆）
+			var db = openDatabase("myDB","1.0","test db",2014*10);
+			function Add() {
+				//用数据库的对象去调用事务，然后使用事务去调用方法
+				db.transaction(function(fx){
+					/*sql语句第二个参数：的调用参数传值使用(有些方法使用的时候需要传入参数等)，
+					         第三个参数（回调参数）：表示执行成功之后执行的事情。
+					         第四个参数（回调参数）：表示执行错误之后需要执行的事情。
+					         第二个参数和第三个参数functio不使用的时候可以不去写
+					*/
+					fx.executeSql("create table if not exists UserInfo(UserName TEXT,Pwd TEXT)",[],function(){},function(){})
+				});
+				
+			}
+		</script>
+		<title>html5本地数据库</title>
+	</head>
+	<body>
+		<div><input type="text" id="txtAUserName"/><input type="password" id="txtAPwd"/><input type="button" value="添加"/></div>
+		<div><input type="text" id="txtSUserName"/><input type="button" value="查询"/></div>
+		<div><input type="text" id="textDUserName"/><input type="button" value="删除"/></div>
+		<div id="dCon"></div>
+	</body>
+</html>

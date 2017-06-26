@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="js/webstorage.js"></script>
+		<script type="text/javascript">
+			function MyClick1(){
+				var username = $("#txtUserName").val();
+			    var pwd = $("#txtPwd").val();
+			    //sessionStorage的存储周期是在当前页面，当浏览器关闭或者是当前界面关闭的时候存储就会被清空，存储在页面的缓存里面。
+//			    sessionStorage.setItem("k_username",username);
+//			    sessionStorage.setItem('k_pwd',pwd);
+//存在本地文件里面，对数据的
+                localStorage.setItem("k_username",username);
+                localStorage.setItem("k_pwd",pwd);
+			    alert("存储成功");
+			}
+			function MyClick2(){
+//				alert(sessionStorage.getItem("k_username"));
+//				alert(sessionStorage.getItem("k_pwd"));
+                alert(localStorage.getItem("k_username"));
+                alert(localStorage.getItem("k_pwd"));
+                //删除某个指定的存储
+                localStorage.removeItem("k_username");
+                // 删除所有的存储
+                localStorage.clear();
+			}
+			
+			function PostCon(){
+				var sCon = $("#trCon").val();
+				$("#dCon").append("<div>" + sCon + "</div>");
+				//将div留言板里面的内容存起来
+				localStorage.setItem("k_con",$("#dCon").html());
+			}
+			//页面打开的时候去查询是否有存储，有的话就去展示
+			$(function(){
+				if(localStorage.getItem("k_con")!=null){
+					"k_con",$("#dCon").html(localStorage.getItem("k_con"));
+				}
+			});
+			function Clear(){
+				$("#dCon").html("");
+				localStorage.clear();
+			}
+			
+		</script>
+		<title>webstorage本地存储</title>
+	</head>
+	<body>
+		<hr />
+	    <!--webstorage介绍（本地存储）（cookie存储还需要向服务端发送请求，服务端向客户端发送一个cookieid然后再存储在本地，最大容量4kb-->
+	     <input type="text" id="txtUserName" />
+	     <input type="password" id="txtPwd" />
+	     <input type="button" value="按钮1" onclick="MyClick1()"/>
+	     <input type="button" value="按钮2" onclick="MyClick2()"/>
+	
+	
+	    <hr />
+		<!--webstorage制作留言板-->
+		<div><textarea id="trCon" cols="30" rows="8"></textarea></div>
+		<div><input type="button" value="发表" onclick="PostCon()"/><input type="button" value="清除" onclick="Clear()"/></div>
+		<div id="dCon"></div>
+	</body>
+</html>

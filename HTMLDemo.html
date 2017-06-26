@@ -2,65 +2,98 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link href="css/Day.css" type="text/css" rel="stylesheet" />
-		<script src="js/Day.js"></script>
 		<title>我的app开发级静态网页</title>
 	</head>
 	<body>
-		 <div class="top">
-<<<<<<< HEAD
-		 	<a href=""><span class="topl"><b><i class="iconfont">&#xe697;</i></b> <返回</span></a>
-			<span class="topr">账户余额(元)</span>
-=======
-				<span class="topr">账户余额(元)</span>
->>>>>>> origin/master
-		</div>
-		<iframe id="contentForm" style="width: ; height: 100%;"></iframe>
-		<table style="width: 100%;margin-bottom: 0px;" class="button">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								<img src="img/file_56eba869f2e91.png" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button>首页</button>
-							</td>
-						</tr>
-					</table>
-				</td>
-				<td>
-					<table>
-						<tr>
-							<td>
-								<img src="img/file_56eba86a8db96.png" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button>选蛋糕</button>
-							</td>
-						</tr>
-					</table>
-				</td>
-				<td>
-					<table>
-						<tr>
-							<td>
-								<img src="img/file_56eba86b40d5c.png" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button>我的</button>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
+		<form action="****.aspx" method="post">
+			<input type="text" name="txtUserName" />
+			<input type="password" name="txtPwd" />
+			<!--添加multiple="multiple"可以按住command选择多个，一般我们下拉选择都是单选，这个属性只在此简单说明一下-->
+			<select name="sColor">
+				<option>--请选择--</option>
+				<option>红色</option>
+				<option>蓝色</option>
+				<option>紫色</option>
+				<option>橙色</option>
+			</select>
+			<input type="radio" name="sex" id="dmale"/><label for="dmale">男</label>
+			<input type="radio" name="sex" id="dfemale"/><label for="dfemale">女</label>
+			<input type="file" name="ffile" />
+			<input type="checkbox" />苹果<input type="checkbox" />橘子
+			<textarea name="ttext" cols="50" rows="20"></textarea>
+			<input type="reset" />
+			<input type="submit" />
+			<input type="button" name="我是一个按钮" />			
+		</form>
+		<hr />
+		<!--自动筛选出输入文本的有关选项过滤出来供选择,safari不适应，在chrome上面调节显示-->
+		<p>autocomplete="on" 自动筛选出输入文本的有关选项过滤出来供选择</p>
+		<form autocomplete="on">
+			<input type="text" list="taglist" />
+			<datalist id="taglist">
+				<option>wuhan</option>
+				<option>beijing</option>
+				<option>beihai</option>
+				<option>guangzhou</option>
+				<option>guangxi</option>
+				<option>guangbei</option>
+			</datalist>
+		</form>
+		
+		<!--页面加载的时候自动获取焦点（不用点击文本框才显示焦点）-->
+		<input type="text" autofocus="autofocus"/>
+		
+		<form action="indexx.aspx" method="post" id="form1">
+			<input type="text" name="userName" />
+			<input type="submit" />
+			<!--表单的提交，也可以在外面提交按钮-->
+		</form>
+	<input type="password" form="form1" />
+	<!--上面在form外面写入一个新密码的输入文本框，点击提交按钮的时候还是能够把这个密码提交上去的。由于密码输入框的form属性指向了form的表单id-->
+	
+	<form action="index.aspx" method="post">
+		<!-- 点击提交按钮，这个name为username的文本内容会被提交到index.aspx这个后台界面-->
+		<input type="text" name="username" />
+		<!--点击提交按钮，这个那么为psw的文本内容会被提交到index.aspx这个后台界面-->
+		<input type="text" name="psw" formaction="index1.aspx" />
+		<input type="submit" />
+	</form>
+	
+	<hr />
+	<!--multiple="multiple"会使上传控件可以选择多个文件-->
+	<input type="file" multiple="multiple" />
+	
+	<form>
+		<!--自定义的输入框的验证，pattern这里使用正则表达式，（6位数字），title为鉴定的时候提示作用-->
+		<input type="text" pattern="{0-9}{6}" title="请输入邮编"/>
+		<!--验证是否为空-->
+		<input type="text" required="required" />
+		<input type="submit" />
+	</form>
+	
+	<!--placeholder默认显示的样式-->
+	<input type="text" placeholder="请输入用户名"/>
+	
+	
+	<!--达成隐藏状态-->
+	<p hidden="hidden">asdfasdfds</p>
+	
+	<!--对p标签选中之后能够去当作一个文本框一样来编辑-->
+	<p contenteditable="true">sdfgdfsgsdfhbf</p>
+	
+	<!--显示按下tab键的时候顺序,tabindex用来排列点击tab是的切换顺序排列，默认情况下代码的编写顺序就是他的tabindex顺序-->
+	<a href="*" tabindex="2">aaaaaaa</a>
+	<a href="*" tabindex="1">bbbbbb</a>
+	<a href="*" tabindex="4">cccccc</a>
+	<a href="*" tabindex="3">ddddddd</a>
+	
+	
+	<hr />
+	<!--webstorage介绍（本地存储）（cookie存储还需要向服务端发送请求，服务端向客户端发送一个cookieid然后再存储在本地，大小大约4kb-->
+	
+	
+	<hr />
+	
 	</body>
-</html>
+</html> 
+
