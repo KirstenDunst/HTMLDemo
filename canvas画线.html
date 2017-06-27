@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas画布，画矩形、圆形、直线、三角形</title>
+		<style type="text/css">
+			*{
+				/*对所有的样式进行约束紧贴这浏览器显示*/
+				padding: 0px;
+				margin: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+			function Draw(){
+				var c = document.getElementById("mycanvas");
+				c.width = 500;
+				c.height = 500;
+				//获取到上下文，以允许进行绘制的3d环境
+				var ctx = c.getContext("2d");
+				//使用对象来进行画图
+				
+				//1.矩形
+//				//图像默认是黑色的，通过这个属性可以修改颜色显示。
+//				ctx.fillStyle = "red";
+//				//画矩形图片宽高各为200。（可以鼠标右键这个图片会看到这个是一张图片）；
+//				ctx.fillRect(0,0,200,200);
+				
+				//2.直线
+//				//起点
+//				ctx.moveTo(0,0);
+//				//终点
+//				ctx.lineTo(200,200);
+//				//绘制直线
+//				ctx.stroke();
+//				//也可以使用上面的style来修改颜色
+				
+				//3.圆形
+//				//画圆需要一个开始path和一个结束path(由于是一个闭合的曲线)
+//				ctx.beginPath();
+//				/*参数一：起点的坐标x  (圆心的坐标x)
+//				 * 参数二：起点的坐标y  （圆心的坐标y）
+//				 * 参数三：圆的半径  
+//				 * 参数四：绘制开始的角度  
+//				 * 参数五：绘制结束的角度  
+//				 * 参数六：是否为顺时针绘制？
+//				 * */
+//				ctx.arc(100,100,50,0,Math.PI*2,true);
+//				ctx.closePath();
+//				//颜色添加，设置颜色样式
+//				ctx.fillStyle = "#ff0000";
+//				//然后填充
+//				ctx.fill();
+				
+				//4.三角形
+				//任何一个闭合的曲都需要有一个beginpath和一个closepath
+				ctx.beginPath();
+				ctx.moveTo(25,25);
+				ctx.lineTo(150,25);
+				ctx.lineTo(25,150);
+				ctx.closePath();
+				//这个属性是给线添加颜色的，fillstyle是对内部闭合的区域内部填充的颜色样式设置的
+				ctx.strokeStyle = "#ff0000";
+				//画线调用方法
+				ctx.stroke();
+				
+			}
+			
+			//贝塞尔曲线
+			function BeSierDraw(){
+				var c = document.getElementById("mycanvas2");
+				//设置画板的大小
+				c.width = 500;
+				c.height = 500;
+				
+				//设置2d绘制环境
+				var ctx = c.getContext("2d");
+				//绘制线条的宽度
+				ctx.lineWidth = 6;
+				//绘制线条的颜色
+				ctx.strokeStyle = "#ff0000";
+				//开环的，所有只需要一个beginpath就可以了
+				ctx.beginPath();
+				//贝塞尔曲线的起始点
+				ctx.moveTo(0,200);
+				
+				//二次贝塞尔曲线的生成
+//				/*
+//				 参数一：节点(曲线在起点和终点的切线的交点)的坐标x
+//				 参数二：节点的坐标y
+//				 参数三：终点（锚点）的坐标x；
+//				 参数四：终点（锚点）的坐标y；
+//				 */
+//				ctx.quadraticCurveTo(75,50,300,200);
+				
+				//三次贝塞尔曲线的生成
+				/*
+				 * 参数一：起点的那个节点位置x
+				 * 参数二：起点的那个节点位置y
+				 * 参数三：终点（锚点）对应的那个节点的位置坐标x
+				 * 参数四：终点（锚点）对应的那个节点的位置坐标y
+				 * 参数五：终点（锚点）的位置坐标x
+				 * 参数六：终点（锚点）的位置坐标y
+				 */
+				ctx.bezierCurveTo(205,56,239,439,429,236);
+				
+				//开始绘制这个曲线
+				ctx.stroke();
+			}
+		</script>
+		
+	</head>
+	<body>
+		<canvas id="mycanvas"></canvas>
+		<input type="button" value="画图1" onclick="Draw()" />
+		
+		<canvas id="mycanvas2"></canvas>
+		<input type="button" value="画图2" onclick="BeSierDraw()" />
+	</body>
+</html>
