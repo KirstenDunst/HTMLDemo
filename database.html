@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<title>html5本地数据库</title>
 		<script src="js/webstorage.js"></script>
 		<script type="text/javascript">
 			//创建一个数据库。第一个参数表示这个数据库的名字，第二个参数表示数据库的版本号，第三个参数是数据库的描述，第四个表示分配大小（这里是分配10兆）
@@ -14,17 +15,51 @@
 					         第四个参数（回调参数）：表示执行错误之后需要执行的事情。
 					         第二个参数和第三个参数functio不使用的时候可以不去写
 					*/
-					fx.executeSql("create table if not exists UserInfo(UserName TEXT,Pwd TEXT)",[],function(){},function(){})
+					fx.executeSql("create table if not exists UserInfo(UserName TEXT,Pwd TEXT)",[],function(){},function(){});
+					var useraname = $("#txtAUserName").val();
+					var pwd = $("#txtAPwd").val();
+					//参数插入，使用？作为占位符。[]内写入要传入的参数，均以，隔开
+					fx.executeSql("insert into UserInfo values(?,?)",[useraname,pwd],function(){
+						alert("添加成功");
+					});
+				});	
+             }
+			function Sel(){
+				//只是作为下面的sql语句的成立与否调用
+				var sql = "select * from UserInfo where 1=1";
+				var usersname = $("#txtSUserName").val();
+				if(usersname != ""){
+					sql += " and UserName='"+ usersname + "'";
+				}
+				//"select * from UserInfo where 1=1 and UserName='qwe'";整合后的sql语句安排样式。
+				db.transaction(function(fx){
+					//清除之前查询的结果显示
+					$("#dCon").html("");
+				    //fx:事务对象，rs: 查询的结果
+				    fx.executeSql(sql,[],function(fx,rs){
+					    for(var i = 0;i<rs.rows.length;i++){
+						    var s = '<div>' + rs.rows.item(i).UserName + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.rows.item(i).Pwd + "</div>"
+						    $("#dCon").append(s);
+					    }
+				    });
 				});
-				
+			}
+			function Del(){
+				db.transaction(function(fx){
+					var userdname = $("#txtDUserName").val();
+					var sqlDel = "delete from UserInfo where 1=1";
+					fx.executeSql("delete from UserInfo where UserName=?",[userdname],function(){
+						// 这一步是为了重新查询显示。
+						Sel();
+					});
+				});
 			}
 		</script>
-		<title>html5本地数据库</title>
 	</head>
 	<body>
-		<div><input type="text" id="txtAUserName"/><input type="password" id="txtAPwd"/><input type="button" value="添加"/></div>
-		<div><input type="text" id="txtSUserName"/><input type="button" value="查询"/></div>
-		<div><input type="text" id="textDUserName"/><input type="button" value="删除"/></div>
+		<div><input type="text" id="txtAUserName"/><input type="password" id="txtAPwd"/><input type="button" value="添加" onclick="Add()"/></div>
+		<div><input type="text" id="txtSUserName"/><input type="button" value="查询" onclick="Sel()"/></div>
+		<div><input type="text" id="txtDUserName"/><input type="button" value="删除" onclick="Del()"/></div>
 		<div id="dCon"></div>
 	</body>
 </html>
