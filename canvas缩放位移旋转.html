@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas缩放位移旋转</title>
+		<script type="text/javascript">
+			//这样写在界面打开的时候就会走这个方法
+			onload = function () {
+				var c = document.getElementById("mycanvas");
+				c.width = 500;
+				c.height = 500;
+				
+				var ctx = c.getContext("2d");
+				ctx.fillStyle = "#ff0000";
+				//位移偏移（x方向上的偏移量,y方向的偏移量）
+				ctx.translate(100,50);
+				//旋转(这里旋转30度),以这个canvas的中心旋转角度
+				ctx.rotate(30*Math.PI/180);
+				//缩放（宽缩放的倍数，高度缩放的倍数）
+				ctx.scale(2,3);
+				
+				ctx.rect(0,0,150,100);
+				ctx.fill();
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="mycanvas"></canvas>
+	</body>
+</html>
