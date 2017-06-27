@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>保存和恢复canvas状态</title>
+		<script type="text/javascript">
+			function draw() {
+				var c = document.getElementById("mycanvas");
+				c.width = 500;
+				c.height = 500;
+				
+				var ctx = c.getContext("2d");
+				//画一个矩形
+				ctx.fillStyle = "#ff0000";
+				ctx.strokeStyle = "#00ff00";
+				//画一个矩形
+				ctx.fillRect(20,20,200,100);
+				//画一个边框
+				ctx.strokeRect(20,20,200,100);
+				ctx.fill();
+				ctx.stroke();
+				
+				//保存上面的这个画线的状态
+				ctx.save();
+				
+				//再画一个矩形
+				ctx.fillStyle = "#000000";
+				ctx.strokeStyle = "#0000ff";
+				ctx.fillRect(200,200,100,50);
+				ctx.strokeRect(200,200,100,50);
+				ctx.fill();
+				ctx.stroke();
+				
+				//状态恢复
+				ctx.restore();
+				
+				//这里我们没有设置填充颜色和边框颜色，但是显示的时候还是会有颜色显示，对于以后的样式重复设置会很方便
+				ctx.fillRect(300,300,100,100);
+				ctx.strokeRect(300,300,100,100);
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="mycanvas"></canvas>
+		<input type="button" value="画图" onclick="draw()"/>
+		
+	</body>
+</html>
