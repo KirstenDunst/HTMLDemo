@@ -1,0 +1,117 @@
+/*去除表格的分割细线间的间距*/
+table {
+	width: 200px;
+	height: 200px;
+	/*去除table由于th，td设置border存在的间隙消除属性*/
+	border-collapse: collapse;
+}
+
+th,td {
+	border: solid 1px red;
+	text-align: center;
+}
+
+
+/*边框和背景常用的一些属性设置*/
+#dl {
+	width: 300px;
+	height: 300px;
+	
+	/*border属性的参数含义：
+	 * 参数一：线条的类型   solid实线      dashed虚线      dotted点点的形式
+	 * 参数二：线条的粗细尺寸
+	 * 参数三：线条的颜色
+	 */
+	border: dotted 1px #FF0000;
+	/*可以拆分成以下三个来设置*/
+	/*border-style: solid;
+	border-width: 1px;
+	border-color: #FF0000;*/
+	
+	/*设置背景图片，默认情况下是图片横向和纵向铺满（针对小图片会比较明显）*/
+	background-image: url(../img/file_56eba869f2e91.png);
+	/*可以设置图像铺满的方式    
+	 * repeat-x:表示横向铺满。
+	 * repeat-y：表示纵向铺满。
+	 * no-repeat:表示不铺满，图片只放置一个，不够的话不执行铺满方式
+	 * */
+	background-repeat: repeat-x;
+	/*控制背景图片的一个位置信息，两个坐标表示距离父边界线的x轴和y轴的距离*/
+	background-position: 10px 20px;
+	/*设置背景颜色*/
+	background-color: lightgray;
+	
+	/*设置当内容太多出现滑动条的时候，滑动进度条他的背景图片不会随着移动走*/
+	/*背景是否固定*/
+	background-attachment: fixed;
+	
+	/*背景属性也可以合并写，如下：*/
+	/*参数表示
+	 * 参数一：背景颜色
+	 * 参数二：背景图片地址url
+	 * 参数三：背景图片是否重复
+	 * 参数四：背景是否固定
+	 * 参数五：背景图片距离父视图x方向的偏移量
+	 * 参数六：背景图片距离父视图y方向的偏移量
+	 */
+	background: none url(../img/file_56eba869f2e91.png) no-repeat fixed 10px 20px;
+}
+
+/*滚动条*/
+#dl1{
+	width: 200px;
+	height: 200px;
+	border: solid 1px red;
+	/*当内容超出控件的宽高度范围的时候处理的方法：
+	 * hidden 表示隐藏掉，超出的内容不显示
+	 * auto 表示控件的右边会出现一个滑动条可以下拉查看
+	 * scroll 表示不管是否超出都会有一个滑动条
+	 */
+	overflow: auto;
+}
+
+
+
+/*块的隐藏*/
+.c{
+	width: 100px;
+	height: 200px;
+	border: solid 1px red;
+	/*position属性表示位置是否单独，显示是否另起一行
+	 * absolute会使控件脱离文档，不会单独占领一行，会叠在一起
+	 */
+	position: absolute;
+}
+.c1{
+	/*设置隐藏整个模块的属性（不占位置的隐藏）*/
+	/*display: none;*/
+	/*这一种也是隐藏这个模块，（但是这个隐藏是占位置的隐藏）*/
+	/*visibility: hidden;*/
+	
+	background-color: #FF0000;
+	top: 50px;
+	left: 50px;
+	/*用来控制层级，层级越大就越在上面*/
+	z-index: 1;
+}
+.c2{
+	background-color: #00ff00;
+	top: 80px;
+	left: 80px;
+	/*用来控制层级，层级越大就越在上面*/
+	z-index: 2;
+}
+.c3{
+	background-color: #0000ff;
+	top: 100px;
+	left: 100px;
+	/*用来控制层级，层级越大就越在上面*/
+	z-index: 0;
+}
+
+
+
+	
+
+
+	

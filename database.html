@@ -13,7 +13,7 @@
 					/*sql语句第二个参数：的调用参数传值使用(有些方法使用的时候需要传入参数等)，
 					         第三个参数（回调参数）：表示执行成功之后执行的事情。
 					         第四个参数（回调参数）：表示执行错误之后需要执行的事情。
-					         第二个参数和第三个参数functio不使用的时候可以不去写
+					         第三个参数和第四个参数functio不使用的时候可以不去写
 					*/
 					fx.executeSql("create table if not exists UserInfo(UserName TEXT,Pwd TEXT)",[],function(){},function(){});
 					var useraname = $("#txtAUserName").val();
