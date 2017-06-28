@@ -1,0 +1,25 @@
+p {
+	/*让鼠标在上面的时候光标显示的样式
+	 * pointer  显示为手的样式
+	 * wait  加载的过程
+	 * help  ？的样式
+	 */
+	cursor: pointer;
+}
+
+li {
+	/*设置列表的样式*/
+    list-style-type: circle;
+    /*设置列表样式的显示为图片的样式*/
+	list-style-image: url(../img/file_56eba86a8db96.png);
+}
+
+
+img {
+	/*图片的对齐方式（只针对行内元素）
+	 * center  居中对齐
+	 * text-bottom  底部对齐
+	 * text-top  顶部对齐
+	 */
+	vertical-align: middle;
+}
