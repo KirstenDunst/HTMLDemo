@@ -1,0 +1,34 @@
+#d1,#d2{
+	height: 100px;
+	width: 100px;
+	border: solid 1px red;
+	/*也可以参照下面单独设置上、下、左、右*/
+	/*border-top: dashed 1px #0000FF;*/
+	
+	/*内间距padding*/
+	/*padding: 10px;*//*以内容为中心（以下不再赘述，都这样）上下左右都撑开10px*/
+	/*padding: 10px 2px;*//*上下被撑开10px 左右被撑开2px*/
+	/*padding: 10px 20px 4px;*//*上被撑开10px 左右被撑开20px 下面被撑开4px*/
+	/*padding: 10px 20px 4px 5px;*//*上撑开10px 右撑开20px 下撑开4px 左撑开5px*/
+	
+	/*也分别进行设置*/
+	/*padding-top: ;
+	padding-left: ;
+	padding-bottom: ;
+	padding-right: ;*/
+}
+
+#d1{
+	/*外间距（外部距离周围相邻控件之间的距离），块和块之间*/
+	/*margin的设置也同padding一样，后面带的参数的四个写法分别的含义相同*/
+	
+	/*也可以单独设置*/
+	margin-right: 10px;
+	
+}
+
+span{
+	border: solid 1px red;
+	padding: 10px;
+	margin-right: 10px;
+}
