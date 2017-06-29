@@ -1,0 +1,26 @@
+div {
+	width: 100px;
+	height: 100px;
+	border: solid 1px red;
+}
+
+/*浮动的样式设置
+ * 设置float参数（紧跟上一个标签浮动（后面的参数是向哪方向浮动）,会在一行，一行不够的话才会再起一行再向浮动的方向浮动）
+ */
+#d1{
+	float: left;
+}
+#d2{
+	float: left;
+}
+
+/*清除上一个或者下一个控件造成的浮动影响*/
+#d3{
+	/*参数left，right，both，选写上一个或者下一个控件的浮动类型（两者都有选both）*/
+	clear: left;
+	/*如果希望d3 和d4 并排显示（即d3和d4浮动），那么则需要设置d3的浮动方向，不然的话d3，d4是会另开一行的*/
+	float: left;
+}
+#d4{
+	float: left;
+}
