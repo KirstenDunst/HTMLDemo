@@ -1,0 +1,44 @@
+p:nth-child(2){
+	/*p标签的父元素里面的第二个子标签是p标签的那个p标签*/
+	color: red;
+}
+
+p:nth-last-child(2){
+	/*p标签的父元素里面的倒数第二个子标签是p标签的那个p标签*/
+	color: blue;
+}
+
+p:nth-of-type(2){
+	/*这个p标签是属于他的父元素的第二个p标签*/
+	color: yellow;
+}
+
+p:nth-last-of-type(2){
+	/*这个p标签是属于他的父元素里面的倒数第二个p标签*/
+	color: cyan;
+}
+
+
+
+
+
+p:first-child{
+	/*是他的父标签的第一个子标签，并且这个标签是p标签的p标签*/
+	font-size: 1px;
+}
+
+p:last-child{
+	/*是他父标签的最后一个子标签，并且这个标签是p标签*/
+	font-size: 10px;
+}
+
+p:first-of-type{
+	/*是他父标签的第一个p标签*/
+	font-size: 20px;
+}
+
+p:last-of-type{
+	/*是他父标签的最后一个p标签*/
+	font-size: 30px;
+}
+
