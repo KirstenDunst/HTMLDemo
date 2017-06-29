@@ -1,0 +1,20 @@
+div {
+	height: 100px;
+	width: 100px;
+	border: solid 1px red;
+	
+	/*块级元素转换成行内元素*/
+	display: inline;
+}
+
+
+span {
+	height: 100px;
+	width: 100px;
+	border: solid 1px red;
+	
+	/*行内元素转换成块级元素*/
+	display: block;
+	/*这个值表示既有行内元素的特性也有块级元素的特性（既有固定的宽高，也不单独占一行，可以并行排列展示）*/
+	/*display: inline-block;*/
+}
