@@ -1,0 +1,31 @@
+
+/*注意：伪元素是两个冒号*/
+p::before{
+	/*伪元素，我们在审查元素的时候根本看不到这个  请问： 只能显示为：：before样式  */
+	
+	/*他显示的样式会在p标签的内容前面加上（请问：）字样*/
+	content: "请问:";
+}
+
+p::after{
+	/*在内容后面加上（请问：）字样*/
+	content: "请问：";
+}
+
+
+.c1::first-letter{
+	/*class为c1的内容的第一个首单词（第一个汉字）*/
+	color: red;
+}
+
+div::first-line{
+	/*div标签的第一行内容（多行）*/
+	color: blue;
+}
+
+
+::selection{
+	/*修改默认的选中样式（默认情况下是蓝底白字 ）*/
+	color: #FF0000;
+	background-color: yellow;
+}
