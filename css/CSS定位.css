@@ -1,0 +1,67 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+#d1{
+	height: 300px;
+	width: 300px;
+	border: solid 1px red;
+	
+	margin-top: 100px;
+	margin-left: 100px;
+	
+	/*position: relative;*/
+}
+#d2{
+	height: 100px;
+	width: 100px;
+	border: solid 1px blue;
+	
+	/*绝对定位*/
+	/*position: absolute;*/
+	/*top: 150px;
+	left: 150px;*/
+	
+	/*
+	 * 1.绝对定位是脱离了文档流，不会独占一行，他的方位只会受到top、left、right、bottom的影响。
+	 * 2.一个块的top、left、right、bottom是相对于什么？
+	 *   1）如果他的父元素做了定位（不管是什么定位，只要使用了position），就相对于最近的一个父元素。
+	 *   2）如果父元素没有定位（不管是什么定位，只要使用了position），就相对于body
+	 */
+}
+
+#d3{
+	height: 100px;
+	width: 100px;
+	border: solid 1px green;
+	
+	/*相对定位*/
+	position: relative;
+	top: 150px;
+	left: 150px;
+	/*
+	 * 1.相对定位没有脱离文档流，会单独占满一行，他的方位只会受到top、left、right、bottom的影响。
+	 * 2.相对定位的top、left、right、bottom是相对块的最近的一个父元素
+	 */
+}
+
+#d4{
+	height: 100px;
+	width: 100px;
+	border: solid 1px cyan;
+	
+	/*固定定位*/
+	position: fixed;
+	top: 150px;
+	left: 150px;
+	/*
+	 * 1.固定定位脱离了文档流，不会单独占满一行，
+	 * 2.top、left、right、bottom始终是相对于body，不管父元素是否设置位置position属性
+	 */
+	
+	/*
+	 * top、left、right、bottom只有设置了定位绝对、相对、固定的时候才有用。
+	 * 当position：static（默认的时候）这四个方位属性是没有作用的。
+	 */
+}
