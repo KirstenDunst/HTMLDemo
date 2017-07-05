@@ -1,0 +1,22 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+#d1{
+	width: 300px;
+	height: 200px;
+	border: solid 1px red;
+	
+	/*渐变gradient属性
+	 * 
+	 * linear线性渐变
+	 */
+	/*background: -webkit-linear-gradient(red,white 50%, blue);*/
+	/*background: -webkit-gradient(linear,left top,left bottom,from(blue),to(red),color-stop(0.4,#fff),color-stop(0.7,cyan));*/
+	
+	/*径向渐变*/
+	background: radial-gradient(circle,red,yellows,blue);
+	/*background: -webkit-gradient(radial,center center,0,center center,200,from(blue),to(red),color-stop(0.4,#ffffff));*/
+	
+}
