@@ -1,0 +1,37 @@
+
+#p1{
+	font-size: 36px;
+	/*设置文字阴影效果text-shadow
+	 * 参数一：横轴向右的位移
+	 * 参数二：纵向的向下偏移量位移
+	 * 参数三：阴影的半径，越大阴影越淡
+	 * 参数四：阴影的颜色
+	 * 用逗号隔开可以一起设置多个文字的阴影效果(互不影响)
+	 */
+	text-shadow: 10px 10px 10px #ccc,-10px -10px 10px #FF0000;
+}
+
+#p2{
+	/*文字的缩进*/
+	/*这个属性是可以被继承的*/
+	text-indent: 30px;
+}
+
+#p3{
+	width: 100px;
+	height: 100px;
+	border: solid 1px red;
+	/*设置换行根据字符去换行*/
+	word-break: break-all;
+	/*设置按照单词整体来换行的（这也是默认情况下的换行方式）*/
+	/*word-break: break-word;*/
+	
+	/*强行显示一行（多出的部分还是会显示在框外部的）*/
+	/*white-space: nowrap;*/
+	
+	/*超出部分隐藏*/
+	/*overflow: hidden;*/
+	
+	/*超出部分用一个省略号代替*/
+	/*text-overflow: ellipsis;*/
+}
