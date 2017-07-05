@@ -1,0 +1,119 @@
+
+*
+{
+    padding:0px;
+    margin:0px;
+    font-family:"微软雅黑";
+}
+#header
+{
+    height:100px;
+    border:solid 1px red;
+    /*参数第一个表示上下，第二个参数表示左右，auto就会居中*/
+    margin:0px auto;
+}
+#main
+{
+    margin:10px auto;
+    height:400px;
+}
+#footer
+{
+    margin:0px auto;
+    height:100px;
+    border:solid 1px red;
+}
+/*判断屏幕的宽度最小是900的时候（电脑）*/
+@media screen and (min-width:900px)
+{
+    #header,#footer
+    {
+        width:800px;
+    }
+    #main
+    {
+        width:800px;
+        height:400px;;
+    }
+    #main-left
+    {
+        width:200px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+    #main-center
+    {
+        width:394px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+    #main-right
+    {
+        width:200px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+}
+
+/*判断屏幕的最小宽度是600，最大是900（平板）*/
+@media screen and (min-width:600px) and (max-width:900px)
+{
+    #header,#footer
+    {
+        width:600px;
+    }
+    #main
+    {
+        width:600px;
+        height:400px;;
+    }
+    #main-left
+    {
+        width:200px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+    #main-center
+    {
+        width:396px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+    #main-right
+    {
+        display:none;
+    }
+}
+
+/*判断最大的宽度是600时（手机）*/
+@media screen and (max-width:600px)
+{
+    #header,#footer
+    {
+        width:300px;
+    }
+    #main
+    {
+        width:300px;
+        height:400px;;
+    }
+    #main-left
+    {
+        display:none;
+    }
+    #main-center
+    {
+        width:300px;
+        height:400px;
+        border:solid 1px red;
+    }
+    #main-right
+    {
+        display:none;
+    }
+}
