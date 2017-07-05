@@ -1,0 +1,27 @@
+#d1{
+	width: 100px;
+	height: 100px;
+	border: solid 1px red;
+	
+	/*边框的弧度
+	 * 一个参数的时候表示所有的角的弧度半径都是这个值、
+	 * 两个参数的时候，第一个表示左上和右下的弧度半径、第二个表示右上和左下的弧度半径
+	 * 三个参数的时候，第一个参数表示左上，第二个参数表示右上和左下，第三个参数表示右下。
+	 * 四个参数的时候，按顺序分表表示左上、右上、右下、左下（顺时针方向）的弧度半径
+	 */
+	border-radius: 10px;
+	
+	/*阴影*/
+	/*用法和文字的text-shadow相同*/
+	box-shadow: 10px 10px 10px #CCCCCC;
+}
+
+body{
+	background-image: url(../img/123.png);
+	
+	/*背景太小的时候默认是重复拼接铺满，这里设置不让重复，只显示一个*/
+	background-repeat: no-repeat;
+	
+	/*图片太小，不采用拼接的形式强制铺满全部的设置*/
+	background-size: cover;
+}
