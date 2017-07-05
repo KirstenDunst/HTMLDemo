@@ -1,0 +1,80 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+#d1{
+	width: 150px;
+	height: 150px;
+	border: solid 1px red;
+	background-color: #fc9;
+	/*绝对定位*/
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	
+	/*转化处理transform*/
+	transform:rotate(0deg) scale(1.5) translate(20px,30px) skew(30deg,30deg);
+	/*
+	 * rotate(-30deg)：旋转deg表示度数要记得带上，默认旋转方向是顺时针
+	 * 
+	 * scale(1.5)：缩放的倍数，这里是1.5倍
+	 * 
+	 * translate(20px,30px)：位移偏移量，两个参数分别表示横向和纵向的偏移量
+	 * 
+	 * skew(30deg,30deg):倾斜，两个参数分别表示横向和纵向的倾斜角度,中间用，分开
+	 */
+	
+}
+
+/*平滑过渡*/
+#d1:hover{
+	transform: rotate(90deg) scale(2);
+	/*transition平滑过渡*/
+	transition: transform 1s ease;
+	/*
+	 * 参数一：后面的值表示针对的对象，如果处理的多可以写all表示针对所有的
+	 * 参数二：平滑过度的时间
+	 * 参数三：平滑过渡的方式
+	 */
+}
+
+
+
+/*自定义动画*/
+#d2{
+	position: absolute;
+	top: 100px;
+	left: 200px;
+	width: 759px;
+	height: 438px;
+	background-image: url(../img/123.png);
+	/*animation动画，标准的css3的写法，以及下面这个方法的实现@keyframes donghua这样写都是标准的css3的写法
+	 * 
+	 * 但是由于还有一些浏览器没有全部升级到html5的版本还不支持，所以需要适配
+	 * -webkit-animation和@-webkit-keyframes适配普通浏览器以及safari浏览器
+	 * -moz-animation和@-moz-keyframes适配Firefox浏览器
+	 * -ms-animation和@-ms-keyframes兼容IE浏览器
+	 * -o-animation和@-o-keyframes兼容Opera浏览器
+	 * */
+	-webkit-animation: donghua 20s infinite ease;
+	/*
+	 * 参数一：这个动画的名称
+	 * 参数二：这个动画运行一周所需要的时间
+	 * 参数三：动画播放的次数（infinite表示一直持续）
+	 * 参数四：动画播放过程中是匀速的还是加速的还是减速的
+	 */
+}
+
+@-webkit-keyframes donghua{
+	/*动画里面有一个属性叫帧，一般情况下我们写三帧*/
+	0%{
+		transform: translateX(0deg);
+	}
+	50%{
+		transform: rotateX(180deg);
+	}
+	100%{
+		transform: rotateX(360deg);
+	}
+}
