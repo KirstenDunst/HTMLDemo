@@ -29,9 +29,9 @@ $(function(){
     //获取到页面中的最后一个p标签添加样式
 //	$("p:last").css("color","red");
 	
-	//这个p标签是属于父标签的第一个元素设定样式
+	//这个p标签是属于父标签的子元素里面第一个元素设定样式
 //	$("p:first-child").css("color","red");
-	//这个p标签是属于父标签的最后一个元素设定样式
+	//这个p标签是属于父标签的子元素里面最后一个元素设定样式
 //	$("p:last-child").css("color","red");
 	
 	//表示这个p标签是他的父元素的子元素里面第1个标签
@@ -64,11 +64,37 @@ $(function(){
      //表示href链接字符串里面包含pdf这个字符的a标签设置样式
 //  $("a[href*=pdf]").css("color","red");
 	
-	//设置type=button的一个input标签的属性为禁用。
-	$("input[type=button]").attr("disabled","disabled");
+	//设置type=button的一个input标签的属性为禁用（灰色不可点的样式）。
+//	$("input[type=button]").attr("disabled","disabled");
+    //另外的一种写法(获取所有的按钮)
+//  $(":button").attr("disabled","disabled");
+
+     //找到设置禁用的标签，设置css宽度为200px
+//   $("input[disabled=disabled]").css("width","200px");
+	//另外一种写法(找到所有的被禁用的元素)，设置宽度
+//	$(":disabled").css("width","200px");
 	
 	
+	//针对表单元素还有以下几个选择器获取
+	//获取到所有可用的元素来设置样式
+//	$(":enabled").css();
 	
+	//获取到所有的文本框
+//	$(":text")
+    
+    //获取所有的表单元素
+//  $(":file")
+
+    //h获取所有被选中的元素
+//  $(":selected")
+
+    //获取所有的可视元素(显示的元素)
+//  $(":visible")
+
+    //获取所有的表单元素提交
+    $(":submit")
+    
+    
 });
 
 
