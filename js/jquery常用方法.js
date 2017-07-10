@@ -108,7 +108,7 @@ $(function(){
 //检测是否包含样式class等于c1，返回值是bool类型
 //$("#d1").hasClass("c1");
 //判断这个结果集是否是一个p标签。返回值是一个bool类型
-alert($("#d1").is("p");)
+//alert($("#d1").is("p"));
 
 
 
@@ -145,9 +145,6 @@ $("#d1").hover(function(){
 },function(){
 	alert("鼠标移除了");
 });
-
-
-
 
 
 
