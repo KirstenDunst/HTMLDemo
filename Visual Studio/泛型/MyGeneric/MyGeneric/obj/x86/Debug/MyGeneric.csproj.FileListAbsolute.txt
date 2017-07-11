@@ -1,5 +1,0 @@
-/Users/zssy/Visual Studio/MyGeneric/MyGeneric/bin/Debug/MyGeneric.exe
-/Users/zssy/Visual Studio/MyGeneric/MyGeneric/bin/Debug/MyGeneric.pdb
-/Users/zssy/Visual Studio/MyGeneric/MyGeneric/obj/x86/Debug/MyGeneric.csproj.CoreCompileInputs.cache
-/Users/zssy/Visual Studio/MyGeneric/MyGeneric/obj/x86/Debug/MyGeneric.exe
-/Users/zssy/Visual Studio/MyGeneric/MyGeneric/obj/x86/Debug/MyGeneric.pdb
