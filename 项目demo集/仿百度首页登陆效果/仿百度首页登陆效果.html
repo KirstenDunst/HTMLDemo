@@ -2,8 +2,29 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>百度首页登陆效果</title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<!-- 弹出层的调用，下载下来的http://layer.layui.com，基于jquery所以这三个js的顺序不可以变-->
+		<script type="text/javascript" src="layer/layer.js" ></script>
+		<script type="text/javascript" src="js/仿百度首页登陆效果.js" ></script>
+		<link rel="stylesheet" href="css/仿百度首页登陆效果.css" />
+		
 	</head>
 	<body>
+		
+		<div id="header">
+			<div id="header-con">
+				<div><a id="blogin" onclick="ShowLoginBox()">登陆</a></div>
+				<div><a href="" id="breg">注册</a></div>
+			</div>
+		</div>
+		
+		
+		<!--登陆框编写-->
+		<div id="loginbox">
+			<div class="login-item"><input type="text" id="txtUserName" placeholder="请输入用户名"></div>
+			<div class="login-item"><input type="password" id="txtPwd" placeholder="请输入密码"></div>
+			<div class="login-item"><a onclick="Login()">登陆</a></div>
+		</div>
 	</body>
 </html>

@@ -1,0 +1,69 @@
+
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: "微软雅黑";
+}
+
+#header{
+	width: 100%;
+	height: 40px;
+	background-color: navajowhite;
+}
+
+#header-con{
+	width: 900px;
+	height: 40px;
+	border: solid 1px red;
+	/*让这个控件居中显示*/
+	margin: 0px auto;
+}
+
+#header-con div{
+	/*并列一行居右*/
+	float: right;
+	/*这样设置使它纵向居中*/
+	line-height: 40px;
+	/*设置之间的间距*/
+	margin-left: 10px;
+}
+
+#header-con div a {
+	/*设置字体颜色*/
+	color: #fff;
+}
+
+
+
+
+
+/*弹出框的设置*/
+
+.login-item input{
+	width: 350px;
+	height: 40px;
+}
+
+.login-item a {
+	/*因为a标签是一个行内元素对它设置width和height都不起作用*/
+  width: 350px;
+  height: 50px;
+  /*所以我们需要把它变成一个块级元素*/
+  display: block;
+  
+  background-color: blue;
+  
+  /*文字居中处理*/
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+.login-item {
+	margin-top: 25px;
+	margin-left: 20px;
+}
+#loginbox{
+	display: none;
+}
